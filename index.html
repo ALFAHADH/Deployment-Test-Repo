@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Web App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 My Web Application</h1>
+            <p class="subtitle">Deployed via Jenkins CI/CD Pipeline</p>
+        </header>
+        <main>
+            <div class="card">
+                <h2>✅ Deployment Successful</h2>
+                <p>This app was automatically deployed using Jenkins.</p>
+                <p>Build triggered from GitHub push.</p>
+            </div>
+            <div class="info">
+                <div class="info-box">
+                    <h3>🔧 Stack</h3>
+                    <p>HTML + CSS + JS</p>
+                </div>
+                <div class="info-box">
+                    <h3>🔄 CI/CD</h3>
+                    <p>Jenkins Pipeline</p>
+                </div>
+                <div class="info-box">
+                    <h3>📦 Source</h3>
+                    <p>GitHub</p>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <p>Build #<span id="build">1</span> | <span id="time"></span></p>
+        </footer>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
