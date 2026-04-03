@@ -14,31 +14,32 @@ pipeline {
 
         stage('Build Application') {
             steps {
-                echo 'Building application...'
+                echo 'Validating application files...'
                 sh '''
-                    test -f index.html && echo "index.html ✅" || exit 1
-                    test -f style.css  && echo "style.css ✅"  || exit 1
-                    test -f app.js     && echo "app.js ✅"     || exit 1
-                    echo "Build complete!"
+                    test -f index.html && echo "index.html found OK" || exit 1
+                    test -f style.css  && echo "style.css found OK"  || exit 1
+                    test -f app.js     && echo "app.js found OK"     || exit 1
+                    echo "Build validation complete!"
                 '''
             }
         }
 
         stage('Deploy to Server') {
             steps {
-                echo 'Deploying to web server...'
+                echo 'Deploying to Nginx...'
                 sh '''
-                    sudo cp -r ./* /var/www/html/
-                    sudo rm -f /var/www/html/Jenkinsfile
+                    sudo cp index.html /var/www/html/index.html
+                    sudo cp style.css  /var/www/html/style.css
+                    sudo cp app.js     /var/www/html/app.js
                     sudo systemctl reload nginx
-                    echo "Deployed! ✅"
+                    echo "Deployment complete!"
                 '''
             }
         }
     }
 
     post {
-        success { echo '✅ Pipeline SUCCESS - App is live!' }
-        failure  { echo '❌ Pipeline FAILED - Check logs!' }
+        success { echo 'Pipeline SUCCESS - App is live!' }
+        failure  { echo 'Pipeline FAILED - Check logs!' }
     }
 }
