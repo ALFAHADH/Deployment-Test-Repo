@@ -1,0 +1,9 @@
+{
+  "name": "deployment-test-app",
+  "version": "1.0.0",
+  "description": "Static website for Jenkins pipeline",
+  "scripts": {
+    "build": "echo Building static app...",
+    "test": "bash test.sh"
+  }
+}
