@@ -11,20 +11,18 @@ const server = http.createServer((req, res) => {
     filePath = './style.css';
   }
 
-  const extname = path.extname(filePath);
+  const ext = path.extname(filePath);
   let contentType = 'text/html';
 
-  if (extname === '.css') {
-    contentType = 'text/css';
-  }
+  if (ext === '.css') contentType = 'text/css';
 
-  fs.readFile(filePath, (err, content) => {
+  fs.readFile(filePath, (err, data) => {
     if (err) {
       res.writeHead(500);
-      res.end('Server Error');
+      res.end('Error');
     } else {
       res.writeHead(200, { 'Content-Type': contentType });
-      res.end(content, 'utf-8');
+      res.end(data);
     }
   });
 });

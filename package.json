@@ -1,7 +1,6 @@
 {
-  "name": "deployment-test-app",
+  "name": "cicd-app",
   "version": "1.0.0",
-  "description": "Static website for Jenkins pipeline",
   "scripts": {
     "build": "echo Building app...",
     "test": "bash test.sh"

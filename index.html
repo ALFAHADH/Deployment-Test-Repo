@@ -1,33 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Dev Deployment</title>
+  <title>CI/CD App</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-<div class="container">
-  <h1>Welcome to Dev Environment</h1>
-  <p>This is version 123</p>
-
-  <div class="card">
-    <h2>Deployment Status</h2>
-    <p>Application deployed successfully</p>
-    <p>Current Time: <span id="time"></span></p>
-  </div>
-
-  <footer>
-    <p>Deployed using Jenkins CI/CD</p>
-  </footer>
-</div>
-
-<script>
-  const timeElement = document.getElementById("time");
-  if (timeElement) {
-    timeElement.textContent = new Date().toLocaleString();
-  }
-</script>
-
+  <h1>Jenkins CI/CD Working 🚀</h1>
+  <p id="time"></p>
+  <script>
+    document.getElementById("time").innerText = new Date();
+  </script>
 </body>
 </html>
