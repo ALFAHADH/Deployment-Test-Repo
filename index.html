@@ -1,46 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Dev Deployment</title>
-    <link rel="stylesheet" href="style.css">
+  <title>Dev Deployment</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <div class="container">
-    <header>
-        <h1>Welcome to Dev Environment </h1>
-        <p class="subtitle">This is version 2</p>
-    </header>
+  <h1>Welcome to Dev Environment</h1>
+  <p>This is version 2</p>
 
-    <div class="card">
-        <h2>Deployment Status</h2>
-        <p>Application deployed successfully</p>
-        <p>Current Time: <span id="time"></span></p>
-    </div>
+  <div class="card">
+    <h2>Deployment Status</h2>
+    <p>Application deployed successfully</p>
+    <p>Current Time: <span id="time"></span></p>
+  </div>
 
-    <div class="info">
-        <div class="info-box">
-            <h3>Environment</h3>
-            <p>Development</p>
-        </div>
-
-        <div class="info-box">
-            <h3>Version</h3>
-            <p>v2.0</p>
-        </div>
-
-        <div class="info-box">
-            <h3>Status</h3>
-            <p>Running </p>
-        </div>
-    </div>
-
-    <footer>
-        <p>Deployed using Jenkins CI/CD</p>
-    </footer>
+  <footer>
+    <p>Deployed using Jenkins CI/CD</p>
+  </footer>
 </div>
 
-<script src="app.js"></script>
+<script>
+  const timeElement = document.getElementById("time");
+  if (timeElement) {
+    timeElement.textContent = new Date().toLocaleString();
+  }
+</script>
 
 </body>
 </html>
